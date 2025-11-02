@@ -375,7 +375,7 @@ const useGame = create<Store>()(
       name: 'cyclesense:game:v2',
       storage: createJSONStorage(() => localStorage),
       version: 2,
-      migrate: (persisted: any, from) => {
+      migrate: (persisted: any) => {
         // Ensure uiPhase exists on old saves
         if (persisted && persisted.state && !persisted.state.uiPhase) {
           persisted.state.uiPhase = 'setup'
@@ -388,12 +388,6 @@ const useGame = create<Store>()(
           persisted.state.endedAt = new Date(persisted.state.endedAt).toISOString()
         }
         return persisted
-      },
-      onRehydrateStorage: () => {
-        // when rehydration finishes, mark the store as hydrated
-        return () => {
-          set({ hydrated: true })
-        }
       },
     }
   )
