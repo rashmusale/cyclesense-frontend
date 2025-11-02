@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="340">
+  <rect width="240" height="340" rx="24" ry="24" fill="#0ea5e9" />
+  <text x="120" y="170" font-size="28" text-anchor="middle" fill="#fff">B1</text>
+  <text x="120" y="200" font-size="14" text-anchor="middle" fill="#fff">Blue Boom</text>
+</svg>

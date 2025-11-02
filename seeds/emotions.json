@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Confidence",
+    "icon": "/emotions/Confidence.svg"
+  },
+  {
+    "name": "Discipline",
+    "icon": "/emotions/Discipline.svg"
+  },
+  {
+    "name": "Patience",
+    "icon": "/emotions/Patience.svg"
+  },
+  {
+    "name": "Conviction",
+    "icon": "/emotions/Conviction.svg"
+  },
+  {
+    "name": "Adaptability",
+    "icon": "/emotions/Adaptability.svg"
+  }
+]

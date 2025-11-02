@@ -1,0 +1,23 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card {
+  @apply rounded-2xl bg-white shadow-card p-4;
+}
+.btn {
+  @apply inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-black text-white hover:bg-gray-800 active:scale-95;
+}
+.btn-secondary {
+  @apply inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-white border border-gray-300 hover:bg-gray-100;
+}
+.input {
+  @apply border border-gray-300 rounded-xl px-3 py-2;
+}
+.tab {
+  @apply px-4 py-2 rounded-xl cursor-pointer;
+}
+.tab-active {
+  @apply bg-black text-white;
+}
