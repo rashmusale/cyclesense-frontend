@@ -5,6 +5,8 @@ import { exportWorkbook, exportCSVs } from '../utils/export'
 export default function AdminSidebar(){
   const game = useGame(s=>s.state)
   const newGame = useGame(s=>s.newGame)
+  const hydrated = useGame(s=>s.hydrated)
+  const newGame = useGame(s=>s.newGame)
   const addTeam = useGame(s=>s.addTeam)
   const startRound = useGame(s=>s.startRound)
   const drawColor = useGame(s=>s.drawColorCard)
@@ -29,7 +31,9 @@ export default function AdminSidebar(){
       <div className="text-xl font-semibold">Admin</div>
       <button className="btn-secondary w-full" onClick={clear}>Reset (Clear Save)</button>
 
-      {!game && (
+      {(!hydrated || !game || !game.uiPhase || game.uiPhase === 'setup') && <StartPanel />}
+      
+      {(!hydrated || !game || !game.uiPhase || game.uiPhase === 'setup') && (
         <div className="space-y-2">
           <div className="text-sm text-gray-600">Start new game</div>
           <div className="flex flex-col gap-2">

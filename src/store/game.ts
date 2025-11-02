@@ -104,6 +104,7 @@ function computePortfolioReturn(
 
 const useGame = create(persist<{
   state: GameState | null
+  hydrated: false
   emotions: { name: Emotion, icon: string }[]
   cardsColor: Card[]
   cardsBlack: Card[]
@@ -142,7 +143,7 @@ const useGame = create(persist<{
         rounds: [],
         deck: { colorOrder, blackOrder, cursorColor: 0, cursorBlack: 0 },
         startedAt: now(),
-        schema_version: 1,
+        schema_version: 2,
         uiPhase: 'setup'
       }})
     },
@@ -171,7 +172,7 @@ const useGame = create(persist<{
         },
         startedAt: now()
       }
-      return { state: { ...s.state, rounds: [...s.state.rounds, r], uiPhase: 'roundStart' } }
+      set({ state: { ...st, rounds: [...st.rounds, r], uiPhase: 'roundStart' } })
     }),
 
     selectColorCard: (code) => set(s => {
@@ -240,7 +241,7 @@ const useGame = create(persist<{
     }),
 
     applyResults: () => set(s => {
-      const st = s.state; if (!st) return s
+      const st = get().state; if (!st) return
       const r = st.rounds[st.rounds.length-1]; if (!r || !r.colorCardCode) return s
       const color = (s.cardsColor as any as Card[]).find(c=>c.code===r.colorCardCode)!
       const black = r.blackCardCode ? (s.cardsBlack as any as Card[]).find(c=>c.code===r.blackCardCode)! : undefined
@@ -255,11 +256,11 @@ const useGame = create(persist<{
         t.nav = sub.navAfter
       }
       r.endedAt = now()
-      return { state: { ...st, uiPhase: 'postColor' } }
+      set({ state: { ...st, uiPhase: 'postColor' } })
     }),
 
     applyBlackResults: () => set(s => {
-      const st = s.state; if (!st) return s
+      const st = get().state; if (!st) return
       const r = st.rounds[st.rounds.length-1]; if (!r || !r.blackCardCode) return s
       const black = (s.cardsBlack as any).find((x:any)=>x.code===r.blackCardCode)
       if (!black) return s
@@ -276,7 +277,7 @@ const useGame = create(persist<{
         sub.navAfter = t.nav
         sub.portfolioReturn = sub.portfolioReturn + pr
       }
-      return { state: { ...st, uiPhase: 'postBlack' } }
+      set({ state: { ...st, uiPhase: 'postBlack' } })
     }),
 
     undoRound: () => set(s => {
@@ -320,12 +321,12 @@ const useGame = create(persist<{
     }),
 
     setPhase: (p) => set(s => {
-      if (!s.state) return s
-      return { state: { ...s.state, uiPhase: p } }
+      const st = get().state; if (!st) return
+      set({ state: { ...st, uiPhase: p } })
     }),
 
     goNextRound: () => set(s => {
-      const st = s.state; if (!st) return s
+      const st = get().state; if (!st) return
       // start a fresh round immediately and land on roundStart
       const r: Round = {
         id: id('rnd'),
@@ -336,19 +337,23 @@ const useGame = create(persist<{
         snapshotBefore: { teams: st.teams.map(t => ({ teamId: t.id, nav: t.nav, allocation: { ...t.allocation } })), deckCursor: st.deck.cursorColor },
         startedAt: now()
       }
-      return { state: { ...st, rounds: [...st.rounds, r], uiPhase: 'roundStart' } }
+      set({ state: { ...st, rounds: [...st.rounds, r], uiPhase: 'roundStart' } })
     }),
 
     endGame: () => set(s => {
-      const st = s.state; if (!st) return s
+      const st = get().state; if (!st) return
       st.endedAt = now()
-      return { state: { ...st, uiPhase: 'end' } }
+      set({ state: { ...st, endedAt: Date.now(), uiPhase: 'end' } })
     }),
   }),
   {
-    name: 'cyclesense:game:v1',
+    name: 'cyclesense:game:v2',
     storage: createJSONStorage(() => localStorage),
-    version: 1
+    onRehydrateStorage: () => (state) => {
+      // mark hydrated after rehydrate so UI can render safely      
+      state?.set({ hydrated: true } as any)
+    },
+    version: 2
   }
 ))
 
