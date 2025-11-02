@@ -1,42 +1,36 @@
-
 import React from 'react'
-import useGame, { Allocation } from '../store/game'
+import useGame from '../store/game'
 
 export default function CurrentAllocations(){
   const game = useGame(s=>s.state)
-  const submit = useGame(s=>s.submitTeam)
   if (!game) return null
-
-  const changeAlloc = (a: Allocation, k: keyof Allocation, v: number) => ({ ...a, [k]: v })
 
   return (
     <div className="card">
-      <div className="text-lg font-semibold mb-2">Current Allocations</div>
-      <div className="space-y-4">
-        {game.teams.map(t => {
-          const [eq, de, go, ca] = [t.allocation.equity, t.allocation.debt, t.allocation.gold, t.allocation.cash]
-          const sum = eq+de+go+ca
-          return (
-            <div key={t.id} className="border rounded-xl p-3">
-              <div className="font-medium">{t.name}</div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
-                {(['equity','debt','gold','cash'] as (keyof Allocation)[]).map(k => (
-                  <label key={k} className="text-sm">
-                    <div className="text-gray-600">{k.toUpperCase()}</div>
-                    <input type="number" className="input w-full" defaultValue={t.allocation[k]}
-                      onBlur={(e)=>{
-                        const v = parseFloat(e.target.value||'0')
-                        t.allocation = changeAlloc(t.allocation, k, v)
-                      }}/>
-                  </label>
-                ))}
-              </div>
-              <div className={"text-sm mt-2 " + (Math.abs(sum-100)<0.001?'text-green-600':'text-red-600')}>
-                Sum: {sum.toFixed(2)}%
-              </div>
-            </div>
-          )
-        })}
+      <div className="text-lg font-semibold mb-2">Current Allocations (View only)</div>
+      <div className="overflow-x-auto">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="text-left text-gray-600">
+              <th className="py-2 pr-4">Team</th>
+              <th className="py-2 pr-4">Equity</th>
+              <th className="py-2 pr-4">Debt</th>
+              <th className="py-2 pr-4">Gold</th>
+              <th className="py-2 pr-4">Cash</th>
+            </tr>
+          </thead>
+          <tbody>
+            {game.teams.map(t=>(
+              <tr key={t.id} className="border-t">
+                <td className="py-2 pr-4">{t.name}</td>
+                <td className="py-2 pr-4">{t.allocation.equity}%</td>
+                <td className="py-2 pr-4">{t.allocation.debt}%</td>
+                <td className="py-2 pr-4">{t.allocation.gold}%</td>
+                <td className="py-2 pr-4">{t.allocation.cash}%</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   )
