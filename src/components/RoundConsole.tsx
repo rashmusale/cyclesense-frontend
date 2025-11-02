@@ -17,7 +17,7 @@ export default function RoundConsole(){
   const applyColor = useGame(s=>s.applyResults)
 
   if (!game) return <div className="card">Start a game to continue.</div>
-  const r = game.rounds.at(-1)
+  const r = game.rounds.length ? game.rounds[game.rounds.length - 1] : undefined
 
   const locked = !!r?.allocationsLocked
   const [emotion, setEmotion] = useState<Emotion>('Patience')
