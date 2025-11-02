@@ -1,0 +1,132 @@
+[
+  {
+    "code": "W1",
+    "title": "Rate Hike Surprise",
+    "text": "Overnight, the central bank raises rates by 75 bps — unexpected. Markets were relaxed till yesterday.",
+    "marketImpact": {
+      "gold": 0.03,
+      "cash": 0.0,
+      "equity": 0.0,
+      "debt": 0.0
+    },
+    "overlayMode": "add",
+    "image_path": "/cards/black/w1.png"
+  },
+  {
+    "code": "W2",
+    "title": "W2 Wildcard",
+    "text": "",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    },
+    "image_path": "/cards/black/w2.png",
+    "overlayMode": "add"
+  },
+  {
+    "code": "W3",
+    "title": "W3 Wildcard",
+    "text": "",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    },
+    "image_path": "/cards/black/w3.png",
+    "overlayMode": "add"
+  },
+  {
+    "code": "W4",
+    "title": "W4 Wildcard",
+    "text": "",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    },
+    "image_path": "/cards/black/w4.png",
+    "overlayMode": "add"
+  },
+  {
+    "code": "W5",
+    "title": "Credit Freeze",
+    "text": "A major NBFC misses payment. Money market funds freeze redemptions. Fear spreads through debt markets.",
+    "marketImpact": {
+      "gold": 0.05,
+      "cash": 0.0,
+      "equity": 0.0,
+      "debt": 0.0
+    },
+    "overlayMode": "add",
+    "image_path": "/cards/black/w5.png"
+  },
+  {
+    "code": "W6",
+    "title": "W6 Wildcard",
+    "text": "",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    },
+    "image_path": "/cards/black/w6.png",
+    "overlayMode": "add"
+  },
+  {
+    "code": "W7",
+    "title": "Flash Crash",
+    "text": "Technical glitch triggers a sharp intraday fall; rebounds partially.",
+    "marketImpact": {
+      "debt": 0.02,
+      "gold": 0.03,
+      "cash": 0.0,
+      "equity": 0.0
+    },
+    "overlayMode": "add",
+    "image_path": "/cards/black/w7.png"
+  },
+  {
+    "code": "W8",
+    "title": "W8 Wildcard",
+    "text": "",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    },
+    "image_path": "/cards/black/w8.png",
+    "overlayMode": "add"
+  },
+  {
+    "code": "W9",
+    "title": "W9 Wildcard",
+    "text": "",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    },
+    "image_path": "/cards/black/w9.png",
+    "overlayMode": "add"
+  },
+  {
+    "code": "W10",
+    "title": "Global Policy Pivot",
+    "text": "A major global central bank signals a dovish pivot. Dollar weakens; risk assets rally.",
+    "marketImpact": {
+      "equity": 0.1,
+      "debt": 0.04,
+      "cash": 0.0,
+      "gold": 0.0
+    },
+    "overlayMode": "add",
+    "image_path": "/cards/black/w10.png"
+  }
+]
