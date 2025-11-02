@@ -12,6 +12,8 @@ import useGame from './store/game'
 import { exportWorkbook } from './utils/export'
 import SetupWizard from './components/SetupWizard'
 import GameEnd from './components/GameEnd'
+import useGame from './store/game'
+import StartPanel from './components/StartPanel'
 
 function Tabs(){
   const loc = useLocation()
@@ -56,7 +58,7 @@ export default function App(){
               element={
                 <>
                   {/* Setup screen only when no game or in setup */}
-                  {(!game || game.uiPhase === 'setup') && <SetupWizard />}
+                  {!game && <StartPanel />}  {/* 👈 Always visible on first load */}
 
                   {/* Round screens */}
                   {game?.uiPhase === 'roundStart' && <>

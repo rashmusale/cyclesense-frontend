@@ -20,11 +20,14 @@ export default function AdminSidebar(){
   const cardsColor = useGame(s=>s.cardsColor)
   const cardsBlack = useGame(s=>s.cardsBlack)
 
+  const clear = () => { localStorage.removeItem('cyclesense_state'); location.reload() }
+
   const [teamName, setTeamName] = useState('')
 
   return (
-    <div className="w-full md:w-64 card sticky top-2 h-fit space-y-3 overflow-hidden">
+    <div className="w-full md:w-64 card sticky top-2 h-fit space-y-3">
       <div className="text-xl font-semibold">Admin</div>
+      <button className="btn-secondary w-full" onClick={clear}>Reset (Clear Save)</button>
 
       {!game && (
         <div className="space-y-2">
