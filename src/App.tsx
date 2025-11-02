@@ -51,7 +51,46 @@ export default function App(){
         <div className="md:col-span-9 space-y-3 order-1 md:order-2">
           <Tabs />
           <Routes>
-            <Route path="/" element={<><SetupWizard /><Leaderboard /><ResultsTable /><GameEnd /></>} />
+            <Route
+              path="/"
+              element={
+                <>
+                  {/* Setup screen only when no game or in setup */}
+                  {(!game || game.uiPhase === 'setup') && <SetupWizard />}
+
+                  {/* Round screens */}
+                  {game?.uiPhase === 'roundStart' && <>
+                    <Leaderboard />
+                    {/* CardOverlay already visible from RoundConsole */}
+                    <RoundConsole />
+                  </>}
+
+                  {game?.uiPhase === 'teamInputs' && <>
+                    <Leaderboard />
+                    <RoundConsole />
+                  </>}
+
+                  {game?.uiPhase === 'postColor' && <>
+                    <Leaderboard />
+                    <ResultsTable />
+                    <RoundConsole />
+                  </>}
+
+                  {game?.uiPhase === 'postBlack' && <>
+                    <Leaderboard />
+                    <ResultsTable />
+                    <RoundConsole />
+                  </>}
+
+                  {/* End screen */}
+                  {game?.uiPhase === 'end' && <>
+                    <Leaderboard />
+                    <ResultsTable />
+                    <GameEnd />
+                  </>}
+                </>
+              }
+            />
             <Route path="/allocations" element={<CurrentAllocations />} />
             <Route path="/history" element={<HistoricalAllocations />} />
             <Route path="/nav" element={<NavChart />} />

@@ -18,6 +18,15 @@ export default function RoundConsole(){
 
   if (!game) return null
   const r = game.rounds[game.rounds.length-1]
+  const phaseHint = !game ? '' : ({
+    setup: 'Add teams and start the first round.',
+    roundStart: 'Roll or select the phase color, then reveal the color card.',
+    teamInputs: 'Enter team allocations, emotion, and pitch. Then compute color results.',
+    postColor: 'Draw/apply black card to adjust NAVs.',
+    postBlack: 'Round complete. Start next round or end game.',
+    end: 'Download results or start a new game.'
+  } as const)[game.uiPhase];
+
 
   const [form, setForm] = useState<Record<string, { alloc: Allocation, emotion: Emotion, pitch: number, emoScore: number}>>({})
   const [phase, setPhase] = useState<typeof phases[number]>('Green')
@@ -34,6 +43,7 @@ export default function RoundConsole(){
           <div className="text-lg font-semibold">Round {r.index} Console</div>
           <div className="text-sm text-gray-600">{r.colorCardCode ? ('Card: '+r.colorCardCode) : 'No card yet'}</div>
         </div>
+        <div className="text-xs text-gray-500 mt-1">{phaseHint}</div>
 
         <div className="mt-3 grid md:grid-cols-2 gap-3">
           <div className="border rounded-xl p-3">

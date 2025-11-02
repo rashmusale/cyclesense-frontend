@@ -21,3 +21,8 @@
 .tab-active {
   @apply bg-black text-white;
 }
+.card { overflow: hidden; }
+.btn { width: fit-content; }
+@media (max-width: 768px) {
+  .btn { width: 100%; }
+}

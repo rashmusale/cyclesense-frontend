@@ -9,6 +9,7 @@ import { mulberry32, seedFromString } from '../utils/prng'
 export type Mode = 'virtual' | 'inperson'
 export type Asset = 'equity' | 'debt' | 'gold' | 'cash'
 export type Emotion = 'Confidence'|'Discipline'|'Patience'|'Conviction'|'Adaptability'
+export type UiPhase = 'setup' | 'roundStart' | 'teamInputs' | 'postColor' | 'postBlack' | 'end'
 
 export interface Allocation { equity: number; debt: number; gold: number; cash: number }
 export interface Team { id: string; name: string; nav: number; allocation: Allocation }
@@ -48,6 +49,7 @@ export interface GameState {
   startedAt: string
   endedAt?: string
   schema_version: number
+  uiPhase: UiPhase
 }
 export interface Card {
   code: string
@@ -109,6 +111,8 @@ const useGame = create(persist<{
   addTeam: (name: string) => void
   removeTeam: (id: string) => void
   startRound: () => void
+  setPhase: (p: UiPhase) => void
+  goNextRound: () => void
   selectColorCard: (code: string) => void
   drawColorCard: () => void
   selectBlackCard: (code: string) => void
@@ -138,7 +142,8 @@ const useGame = create(persist<{
         rounds: [],
         deck: { colorOrder, blackOrder, cursorColor: 0, cursorBlack: 0 },
         startedAt: now(),
-        schema_version: 1
+        schema_version: 1,
+        uiPhase: 'setup'
       }})
     },
 
@@ -166,7 +171,7 @@ const useGame = create(persist<{
         },
         startedAt: now()
       }
-      return { state: { ...s.state, rounds: [...s.state.rounds, r] } }
+      return { state: { ...s.state, rounds: [...s.state.rounds, r], uiPhase: 'roundStart' } }
     }),
 
     selectColorCard: (code) => set(s => {
@@ -174,7 +179,7 @@ const useGame = create(persist<{
       const rounds = [...st.rounds]
       const r = rounds[rounds.length-1]; if (!r) return s
       r.colorCardCode = code
-      return { state: { ...st, rounds } }
+      return { state: { ...st, rounds, uiPhase: 'teamInputs' } }
     }),
 
     drawColorCard: () => set(s => {
@@ -183,7 +188,7 @@ const useGame = create(persist<{
       if (st.deck.cursorColor >= st.deck.colorOrder.length && !st.settings.allowReshuffle) return s
       if (st.deck.cursorColor >= st.deck.colorOrder.length) st.deck.cursorColor = 0
       r.colorCardCode = st.deck.colorOrder[st.deck.cursorColor++]
-      return { state: { ...st } }
+      return { state: { ...st, rounds, uiPhase: 'teamInputs' } }
     }),
 
     selectBlackCard: (code) => set(s => {
@@ -250,7 +255,7 @@ const useGame = create(persist<{
         t.nav = sub.navAfter
       }
       r.endedAt = now()
-      return { state: { ...st } }
+      return { state: { ...st, uiPhase: 'postColor' } }
     }),
 
     applyBlackResults: () => set(s => {
@@ -271,7 +276,7 @@ const useGame = create(persist<{
         sub.navAfter = t.nav
         sub.portfolioReturn = sub.portfolioReturn + pr
       }
-      return { state: { ...st } }
+      return { state: { ...st, uiPhase: 'postBlack' } }
     }),
 
     undoRound: () => set(s => {
@@ -314,10 +319,30 @@ const useGame = create(persist<{
       return { state: { ...st } }
     }),
 
+    setPhase: (p) => set(s => {
+      if (!s.state) return s
+      return { state: { ...s.state, uiPhase: p } }
+    }),
+
+    goNextRound: () => set(s => {
+      const st = s.state; if (!st) return s
+      // start a fresh round immediately and land on roundStart
+      const r: Round = {
+        id: id('rnd'),
+        index: st.rounds.length,
+        colorCardCode: null,
+        blackCardCode: null,
+        submissions: [],
+        snapshotBefore: { teams: st.teams.map(t => ({ teamId: t.id, nav: t.nav, allocation: { ...t.allocation } })), deckCursor: st.deck.cursorColor },
+        startedAt: now()
+      }
+      return { state: { ...st, rounds: [...st.rounds, r], uiPhase: 'roundStart' } }
+    }),
+
     endGame: () => set(s => {
       const st = s.state; if (!st) return s
       st.endedAt = now()
-      return { state: { ...st } }
+      return { state: { ...st, uiPhase: 'end' } }
     }),
   }),
   {
