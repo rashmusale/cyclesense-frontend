@@ -389,9 +389,11 @@ const useGame = create<Store>()(
         }
         return persisted
       },
-      onRehydrateStorage: () => (state) => {
-        // Mark hydrated so UI can show start buttons if needed
-        state?.set({ hydrated: true } as Partial<Store>)
+      onRehydrateStorage: () => {
+        // when rehydration finishes, mark the store as hydrated
+        return () => {
+          set({ hydrated: true })
+        }
       },
     }
   )
