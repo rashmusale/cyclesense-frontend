@@ -1,362 +1,362 @@
 [
   {
-    "code": "G1",
-    "title": "Post‑Reform Revival",
-    "text": "GDP growth turns positive; inflation cools; reforms fill headlines. Valuations low, participation cautious.",
-    "marketImpact": {
-      "equity": 0.35,
-      "debt": 0.08,
-      "gold": 0.0,
-      "cash": 0.0
-    },
-    "image_path": "/cards/color/g1.png"
-  },
-  {
-    "code": "G2",
-    "title": "Early Bull Ignition",
-    "text": "Corporate profits rise modestly. Inflation stable, reforms continue. FII interest flickers; domestic sentiment guarded. Earnings surprises begin quietly.",
-    "marketImpact": {
-      "equity": 0.55,
-      "debt": 0.05,
-      "cash": 0.0,
-      "gold": 0.0
-    },
-    "image_path": "/cards/color/g2.png"
-  },
-  {
-    "code": "G3",
-    "title": "Sustained Expansion Begins",
-    "text": "GDP above 7%, inflation benign. Capex cycle starts; exports rise. Analysts raise targets slowly; smallcaps and cyclicals lead.",
-    "marketImpact": {
-      "equity": 0.45,
-      "debt": 0.04,
-      "cash": 0.0,
-      "gold": 0.0
-    },
-    "image_path": "/cards/color/g3.png"
-  },
-  {
-    "code": "G4",
-    "title": "Post‑Election Revival",
-    "text": "Growth robust, inflation manageable; policy supportive. Markets test new highs but valuations still fair; participation broadens.",
-    "marketImpact": {
-      "equity": 0.35,
-      "debt": 0.06,
-      "cash": 0.0,
-      "gold": 0.0
-    },
-    "image_path": "/cards/color/g4.png"
-  },
-  {
-    "code": "G5",
-    "title": "Early Consolidation",
-    "text": "GDP steady at 6–7%. Corporate balance sheets improve; credit flow returns. Inflation within target; currency stable. Markets quietly strong.",
-    "marketImpact": {
-      "equity": 0.25,
-      "debt": 0.07,
-      "cash": 0.0,
-      "gold": 0.0
-    },
-    "image_path": "/cards/color/g5.png"
-  },
-  {
-    "code": "G6",
-    "title": "New Cycle Emergence",
-    "text": "Growth resilient post‑shock; earnings revive; valuations reasonable. The cycle feels balanced.",
-    "marketImpact": {
-      "equity": 0.2,
-      "debt": 0.05,
-      "gold": 0.04,
-      "cash": 0.0
-    },
-    "image_path": "/cards/color/g6.png"
-  },
-  {
-    "code": "B1",
-    "title": "Peak Expansion",
-    "text": "Growth strong, inflation benign. Upgrades pour in; midcaps lead; everything feels ‘different this time’.",
-    "marketImpact": {
-      "equity": 0.45,
-      "debt": 0.03,
-      "cash": 0.0,
-      "gold": 0.0
-    },
-    "image_path": "/cards/color/b1.png"
-  },
-  {
-    "code": "B2",
-    "title": "Pre‑Crisis Euphoria",
-    "text": "GDP >8%. Crude low, bond yields falling. Liquidity everywhere — returns feel effortless.",
-    "marketImpact": {
-      "equity": 0.55,
-      "debt": 0.02,
-      "cash": 0.0,
-      "gold": 0.0
-    },
-    "image_path": "/cards/color/b2.png"
-  },
-  {
-    "code": "B3",
-    "title": "Late‑Cycle Liquidity Excess",
-    "text": "Global growth synchronised; central banks hint at tightening; investors ignore hints.",
-    "marketImpact": {
-      "equity": 0.3,
-      "debt": 0.01,
-      "gold": 0.02,
-      "cash": 0.0
-    },
-    "image_path": "/cards/color/b3.png"
-  },
-  {
-    "code": "B4",
-    "title": "Policy Tightening Begins",
-    "text": "Crude rises mildly; inflation nudges; policy normalisation. Debt looks interesting again.",
-    "marketImpact": {
-      "debt": 0.07,
-      "gold": 0.03,
-      "cash": 0.0,
-      "equity": 0.0
-    },
-    "image_path": "/cards/color/b4.png"
-  },
-  {
-    "code": "B5",
-    "title": "Late Bull Complacency",
-    "text": "GDP still >7%, but bond yields spike; growth plateaus; valuations stretched.",
-    "marketImpact": {
-      "equity": 0.05,
-      "gold": 0.06,
-      "cash": 0.0,
-      "debt": 0.0
-    },
-    "image_path": "/cards/color/b5.png"
-  },
-  {
-    "code": "B6",
-    "title": "Post‑Rebound Overconfidence",
-    "text": "Corporate earnings flatten; liquidity still high; leadership narrows.",
-    "marketImpact": {
-      "equity": 0.25,
-      "debt": 0.05,
-      "cash": 0.0,
-      "gold": 0.0
-    },
-    "image_path": "/cards/color/b6.png"
-  },
-  {
-    "code": "B7",
-    "title": "Tightening & Rotation",
-    "text": "Growth firm but profit growth slows; global yields rise; cost of capital increases; markets feel heavy.",
-    "marketImpact": {
-      "debt": 0.07,
-      "gold": 0.04,
-      "cash": 0.0,
-      "equity": 0.0
-    },
-    "image_path": "/cards/color/b7.png"
-  },
-  {
-    "code": "B8",
-    "title": "End‑of‑Expansion Transition",
-    "text": "GDP moderates; defensives lead; new highs rare; debt regains appeal.",
-    "marketImpact": {
-      "debt": 0.06,
-      "gold": 0.03,
-      "cash": 0.0,
-      "equity": 0.0
-    },
-    "image_path": "/cards/color/b8.png"
-  },
-  {
-    "code": "O1",
-    "title": "Early Slowdown",
-    "text": "Growth near 8%, but input costs rising; margins tighten; rates inch up; sentiment still cheerful.",
-    "marketImpact": {
-      "debt": 0.12,
-      "gold": 0.06,
-      "cash": 0.0,
-      "equity": 0.0
-    },
-    "image_path": "/cards/color/o1.png"
-  },
-  {
-    "code": "O2",
-    "title": "O2 Title",
+    "code": "g1",
+    "title": "Green 1",
     "text": "",
+    "image_path": "/cards/color/g1.png",
     "marketImpact": {
       "equity": 0,
       "debt": 0,
       "gold": 0,
       "cash": 0
-    },
-    "image_path": "/cards/color/o2.png"
+    }
   },
   {
-    "code": "O3",
-    "title": "O3 Title",
+    "code": "g2",
+    "title": "Green 2",
     "text": "",
+    "image_path": "/cards/color/g2.png",
     "marketImpact": {
       "equity": 0,
       "debt": 0,
       "gold": 0,
       "cash": 0
-    },
-    "image_path": "/cards/color/o3.png"
+    }
   },
   {
-    "code": "O4",
-    "title": "O4 Title",
+    "code": "g3",
+    "title": "Green 3",
     "text": "",
+    "image_path": "/cards/color/g3.png",
     "marketImpact": {
       "equity": 0,
       "debt": 0,
       "gold": 0,
       "cash": 0
-    },
-    "image_path": "/cards/color/o4.png"
+    }
   },
   {
-    "code": "O5",
-    "title": "O5 Title",
+    "code": "g4",
+    "title": "Green 4",
     "text": "",
+    "image_path": "/cards/color/g4.png",
     "marketImpact": {
       "equity": 0,
       "debt": 0,
       "gold": 0,
       "cash": 0
-    },
-    "image_path": "/cards/color/o5.png"
+    }
   },
   {
-    "code": "O6",
-    "title": "O6 Title",
+    "code": "g5",
+    "title": "Green 5",
     "text": "",
+    "image_path": "/cards/color/g5.png",
     "marketImpact": {
       "equity": 0,
       "debt": 0,
       "gold": 0,
       "cash": 0
-    },
-    "image_path": "/cards/color/o6.png"
+    }
   },
   {
-    "code": "O7",
-    "title": "Liquidity Stress",
-    "text": "Credit markets fragile; NBFC misses repayment; liquidity thins; short rates spike.",
-    "marketImpact": {
-      "gold": 0.05,
-      "cash": 0.0,
-      "equity": 0.0,
-      "debt": 0.0
-    },
-    "image_path": "/cards/color/o7.png"
-  },
-  {
-    "code": "O8",
-    "title": "O8 Title",
+    "code": "g6",
+    "title": "Green 6",
     "text": "",
+    "image_path": "/cards/color/g6.png",
     "marketImpact": {
       "equity": 0,
       "debt": 0,
       "gold": 0,
       "cash": 0
-    },
-    "image_path": "/cards/color/o8.png"
+    }
   },
   {
-    "code": "O9",
-    "title": "O9 Title",
+    "code": "b1",
+    "title": "Blue 1",
     "text": "",
+    "image_path": "/cards/color/b1.png",
     "marketImpact": {
       "equity": 0,
       "debt": 0,
       "gold": 0,
       "cash": 0
-    },
-    "image_path": "/cards/color/o9.png"
+    }
   },
   {
-    "code": "O10",
-    "title": "Transition to Recovery",
-    "text": "Growth bottoms; policy easing begins; valuations reasonable; confidence returns slowly.",
-    "marketImpact": {
-      "equity": 0.2,
-      "debt": 0.06,
-      "cash": 0.0,
-      "gold": 0.0
-    },
-    "image_path": "/cards/color/o10.png"
-  },
-  {
-    "code": "R1",
-    "title": "Tech Bust & Credit Stress",
-    "text": "Growth slips under 5%; leverage high; defaults rise; markets down 25%; no one wants to call a bottom.",
-    "marketImpact": {
-      "debt": 0.1,
-      "gold": 0.12,
-      "cash": 0.03,
-      "equity": 0.0
-    },
-    "image_path": "/cards/color/r1.png"
-  },
-  {
-    "code": "R2",
-    "title": "Global Financial Crisis",
-    "text": "GDP contracts; credit freezes; valuations cheapest in years; liquidity vanishes — courage most valuable.",
-    "marketImpact": {
-      "debt": 0.12,
-      "gold": 0.3,
-      "cash": 0.04,
-      "equity": 0.0
-    },
-    "image_path": "/cards/color/r2.png"
-  },
-  {
-    "code": "R3",
-    "title": "Early Rebound",
-    "text": "Growth still weak but stabilising; policy support builds; liquidity floods the system; disbelief lingers.",
-    "marketImpact": {
-      "equity": 0.8,
-      "debt": 0.05,
-      "gold": 0.08,
-      "cash": 0.0
-    },
-    "image_path": "/cards/color/r3.png"
-  },
-  {
-    "code": "R4",
-    "title": "R4 Title",
+    "code": "b2",
+    "title": "Blue 2",
     "text": "",
+    "image_path": "/cards/color/b2.png",
     "marketImpact": {
       "equity": 0,
       "debt": 0,
       "gold": 0,
       "cash": 0
-    },
-    "image_path": "/cards/color/r4.png"
+    }
   },
   {
-    "code": "R5",
-    "title": "R5 Title",
+    "code": "b3",
+    "title": "Blue 3",
     "text": "",
+    "image_path": "/cards/color/b3.png",
     "marketImpact": {
       "equity": 0,
       "debt": 0,
       "gold": 0,
       "cash": 0
-    },
-    "image_path": "/cards/color/r5.png"
+    }
   },
   {
-    "code": "R6",
-    "title": "Post‑Crisis Liquidity Recovery",
-    "text": "Cases fall; restrictions ease; liquidity abundant; earnings upgrades resume; risk appetite returns fast.",
+    "code": "b4",
+    "title": "Blue 4",
+    "text": "",
+    "image_path": "/cards/color/b4.png",
     "marketImpact": {
-      "equity": 0.65,
-      "debt": 0.05,
-      "gold": 0.1,
-      "cash": 0.0
-    },
-    "image_path": "/cards/color/r6.png"
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    }
+  },
+  {
+    "code": "b5",
+    "title": "Blue 5",
+    "text": "",
+    "image_path": "/cards/color/b5.png",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    }
+  },
+  {
+    "code": "b6",
+    "title": "Blue 6",
+    "text": "",
+    "image_path": "/cards/color/b6.png",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    }
+  },
+  {
+    "code": "b7",
+    "title": "Blue 7",
+    "text": "",
+    "image_path": "/cards/color/b7.png",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    }
+  },
+  {
+    "code": "b8",
+    "title": "Blue 8",
+    "text": "",
+    "image_path": "/cards/color/b8.png",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    }
+  },
+  {
+    "code": "o1",
+    "title": "Orange 1",
+    "text": "",
+    "image_path": "/cards/color/o1.png",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    }
+  },
+  {
+    "code": "o2",
+    "title": "Orange 2",
+    "text": "",
+    "image_path": "/cards/color/o2.png",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    }
+  },
+  {
+    "code": "o3",
+    "title": "Orange 3",
+    "text": "",
+    "image_path": "/cards/color/o3.png",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    }
+  },
+  {
+    "code": "o4",
+    "title": "Orange 4",
+    "text": "",
+    "image_path": "/cards/color/o4.png",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    }
+  },
+  {
+    "code": "o5",
+    "title": "Orange 5",
+    "text": "",
+    "image_path": "/cards/color/o5.png",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    }
+  },
+  {
+    "code": "o6",
+    "title": "Orange 6",
+    "text": "",
+    "image_path": "/cards/color/o6.png",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    }
+  },
+  {
+    "code": "o7",
+    "title": "Orange 7",
+    "text": "",
+    "image_path": "/cards/color/o7.png",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    }
+  },
+  {
+    "code": "o8",
+    "title": "Orange 8",
+    "text": "",
+    "image_path": "/cards/color/o8.png",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    }
+  },
+  {
+    "code": "o9",
+    "title": "Orange 9",
+    "text": "",
+    "image_path": "/cards/color/o9.png",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    }
+  },
+  {
+    "code": "o10",
+    "title": "Orange 10",
+    "text": "",
+    "image_path": "/cards/color/o10.png",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    }
+  },
+  {
+    "code": "r1",
+    "title": "Red 1",
+    "text": "",
+    "image_path": "/cards/color/r1.png",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    }
+  },
+  {
+    "code": "r2",
+    "title": "Red 2",
+    "text": "",
+    "image_path": "/cards/color/r2.png",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    }
+  },
+  {
+    "code": "r3",
+    "title": "Red 3",
+    "text": "",
+    "image_path": "/cards/color/r3.png",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    }
+  },
+  {
+    "code": "r4",
+    "title": "Red 4",
+    "text": "",
+    "image_path": "/cards/color/r4.png",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    }
+  },
+  {
+    "code": "r5",
+    "title": "Red 5",
+    "text": "",
+    "image_path": "/cards/color/r5.png",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    }
+  },
+  {
+    "code": "r6",
+    "title": "Red 6",
+    "text": "",
+    "image_path": "/cards/color/r6.png",
+    "marketImpact": {
+      "equity": 0,
+      "debt": 0,
+      "gold": 0,
+      "cash": 0
+    }
   }
 ]

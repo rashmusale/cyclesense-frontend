@@ -1,22 +1,22 @@
 [
   {
     "name": "Confidence",
-    "icon": "/emotions/Confidence.svg"
+    "icon": "\ud83d\udcaa"
   },
   {
     "name": "Discipline",
-    "icon": "/emotions/Discipline.svg"
+    "icon": "\ud83e\udded"
   },
   {
     "name": "Patience",
-    "icon": "/emotions/Patience.svg"
+    "icon": "\u23f3"
   },
   {
     "name": "Conviction",
-    "icon": "/emotions/Conviction.svg"
+    "icon": "\ud83c\udfaf"
   },
   {
     "name": "Adaptability",
-    "icon": "/emotions/Adaptability.svg"
+    "icon": "\ud83d\udd01"
   }
 ]

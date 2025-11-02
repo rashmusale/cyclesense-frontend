@@ -1,28 +1,14 @@
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.card {
-  @apply rounded-2xl bg-white shadow-card p-4;
-}
-.btn {
-  @apply inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-black text-white hover:bg-gray-800 active:scale-95;
-}
-.btn-secondary {
-  @apply inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-white border border-gray-300 hover:bg-gray-100;
-}
-.input {
-  @apply border border-gray-300 rounded-xl px-3 py-2;
-}
-.tab {
-  @apply px-4 py-2 rounded-xl cursor-pointer;
-}
-.tab-active {
-  @apply bg-black text-white;
-}
-.card { overflow: hidden; }
-.btn { width: fit-content; }
-@media (max-width: 768px) {
-  .btn { width: 100%; }
-}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; color: #0f172a; }
+.container { max-width: 1200px; margin: 0 auto; padding: 12px; }
+.card { background: white; border-radius: 14px; padding: 14px; box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); }
+.btn { background: #0ea5e9; color: white; border: 0; border-radius: 10px; padding: 8px 12px; cursor: pointer; }
+.btn:hover { opacity: 0.95; }
+.btn-secondary { background: #e2e8f0; color: #0f172a; border: 0; border-radius: 10px; padding: 8px 12px; cursor: pointer; }
+.input { padding: 8px 10px; border-radius: 10px; border: 1px solid #cbd5e1; outline: none; }
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.tab { padding: 8px 10px; border-radius: 999px; background: #e2e8f0; color: #0f172a; text-decoration: none; }
+.tab.active { background: #0ea5e9; color: white; }
+table { border-collapse: collapse; }
+th, td { padding-right: 12px; }
