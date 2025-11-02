@@ -188,7 +188,7 @@ const useGame = create(persist<{
       if (st.deck.cursorColor >= st.deck.colorOrder.length && !st.settings.allowReshuffle) return s
       if (st.deck.cursorColor >= st.deck.colorOrder.length) st.deck.cursorColor = 0
       r.colorCardCode = st.deck.colorOrder[st.deck.cursorColor++]
-      return { state: { ...st, rounds, uiPhase: 'teamInputs' } }
+      return { state: { ...st, uiPhase: 'teamInputs' } }
     }),
 
     selectBlackCard: (code) => set(s => {
