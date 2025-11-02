@@ -12,7 +12,6 @@ import useGame from './store/game'
 import { exportWorkbook } from './utils/export'
 import SetupWizard from './components/SetupWizard'
 import GameEnd from './components/GameEnd'
-import useGame from './store/game'
 import StartPanel from './components/StartPanel'
 
 function Tabs(){
