@@ -63,20 +63,41 @@ function now(){ return new Date().toISOString() }
 
 function defaultAlloc(): Allocation { return { equity:25, debt:25, gold:25, cash:25 } }
 
-function computePortfolioReturn(alloc: Allocation, color: Card, black?: Card){
-  const base = { equity:0, debt:0, gold:0, cash:0, ...color.marketImpact } as any
-  if (black){
+function computePortfolioReturn(
+  alloc: Allocation,
+  color: Card,
+  black?: Card
+) {
+  const base: Record<Asset, number> = {
+    equity: 0,
+    debt: 0,
+    gold: 0,
+    cash: 0,
+    ...(color.marketImpact as any),
+  };
+
+  if (black) {
     if (black.overlayMode === 'multiply') {
-      for (const k of ['equity','debt','gold','cash']){
-        base[k] = (base[k] ?? 0) * (1 + (black.marketImpact as any)[k] ?? 0)
-      }
-    } else { // add (default)
-      for (const k of ['equity','debt','gold','cash']){
-        base[k] = (base[k] ?? 0) + ((black.marketImpact as any)[k] ?? 0)
-      }
+      (['equity', 'debt', 'gold', 'cash'] as Asset[]).forEach((k) => {
+        const overlay = ((black.marketImpact as any)[k] ?? 0) as number;
+        base[k] = (base[k] ?? 0) * (1 + overlay);
+      });
+    } else {
+      // 'add' (default)
+      (['equity', 'debt', 'gold', 'cash'] as Asset[]).forEach((k) => {
+        const add = ((black.marketImpact as any)[k] ?? 0) as number;
+        base[k] = (base[k] ?? 0) + add;
+      });
     }
   }
-  return (alloc.equity*base.equity + alloc.debt*base.debt + alloc.gold*base.gold + alloc.cash*base.cash)/100
+
+  return (
+    (alloc.equity * (base.equity ?? 0) +
+      alloc.debt * (base.debt ?? 0) +
+      alloc.gold * (base.gold ?? 0) +
+      alloc.cash * (base.cash ?? 0)) /
+    100
+  );
 }
 
 const useGame = create(persist<{
@@ -284,5 +305,4 @@ const useGame = create(persist<{
   }
 ))
 
-export type { GameState }
 export default useGame
