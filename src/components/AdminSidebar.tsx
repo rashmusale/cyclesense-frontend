@@ -11,6 +11,7 @@ export default function AdminSidebar(){
   const drawColor = useGame(s=>s.drawColorCard)
   const drawBlack = useGame(s=>s.drawBlackCard)
   const apply = useGame(s=>s.applyResults)
+  const applyBlack = useGame(s=>s.applyBlackResults)
   const undo = useGame(s=>s.undoRound)
   const rescore = useGame(s=>s.rescoreRound)
   const endGame = useGame(s=>s.endGame)
@@ -59,9 +60,14 @@ export default function AdminSidebar(){
                 </>
               )}
             </div>
-            <div className="flex gap-2">
-              <button className="btn" onClick={apply}>Apply Results</button>
-              <button className="btn-secondary" onClick={rescore}>Rescore</button>
+            <div className="space-y-2">
+              <div className="flex gap-2">
+                <button className="btn" onClick={apply}>Compute Scores (Color)</button>
+                <button className="btn-secondary" onClick={rescore}>Rescore</button>
+              </div>
+              <div className="flex gap-2">
+                <button className="btn" onClick={applyBlack}>Apply Black Card</button>
+              </div>
             </div>
             <div className="space-y-2">
               <div className="flex gap-2">

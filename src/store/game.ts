@@ -115,6 +115,7 @@ const useGame = create(persist<{
   drawBlackCard: () => void
   submitTeam: (teamId: string, allocationAfter: Allocation, emotion: Emotion, pitch: number, emotionScore: number) => void
   applyResults: () => void
+  applyBlackResults: () => void
   undoRound: () => void
   rescoreRound: () => void
   endGame: () => void
@@ -249,6 +250,27 @@ const useGame = create(persist<{
         t.nav = sub.navAfter
       }
       r.endedAt = now()
+      return { state: { ...st } }
+    }),
+
+    applyBlackResults: () => set(s => {
+      const st = s.state; if (!st) return s
+      const r = st.rounds[st.rounds.length-1]; if (!r || !r.blackCardCode) return s
+      const black = (s.cardsBlack as any).find((x:any)=>x.code===r.blackCardCode)
+      if (!black) return s
+      for (const sub of r.submissions){
+        const t = st.teams.find(x=>x.id===sub.teamId)!
+        // apply black impact on the current allocation AFTER color NAV was applied
+        const pr = (
+          (black.marketImpact?.equity??0)*sub.allocationAfter.equity +
+          (black.marketImpact?.debt??0)*sub.allocationAfter.debt +
+          (black.marketImpact?.gold??0)*sub.allocationAfter.gold +
+          (black.marketImpact?.cash??0)*sub.allocationAfter.cash
+        ) / 100
+        t.nav = t.nav * (1 + pr)
+        sub.navAfter = t.nav
+        sub.portfolioReturn = sub.portfolioReturn + pr
+      }
       return { state: { ...st } }
     }),
 

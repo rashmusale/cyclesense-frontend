@@ -10,6 +10,8 @@ import RoundConsole from './components/RoundConsole'
 import ResultsTable from './components/ResultsTable'
 import useGame from './store/game'
 import { exportWorkbook } from './utils/export'
+import SetupWizard from './components/SetupWizard'
+import GameEnd from './components/GameEnd'
 
 function Tabs(){
   const loc = useLocation()
@@ -49,7 +51,7 @@ export default function App(){
         <div className="md:col-span-9 space-y-3 order-1 md:order-2">
           <Tabs />
           <Routes>
-            <Route path="/" element={<><Leaderboard /><ResultsTable /></>} />
+            <Route path="/" element={<><SetupWizard /><Leaderboard /><ResultsTable /><GameEnd /></>} />
             <Route path="/allocations" element={<CurrentAllocations />} />
             <Route path="/history" element={<HistoricalAllocations />} />
             <Route path="/nav" element={<NavChart />} />
